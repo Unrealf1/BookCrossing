@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, history } from "react-router-dom";
+import { connect } from "react-redux"
 
 
-function Home({history, location, match}) {
+function Home(props) {
+  const history = props.history;
   return(
     <div>
         <div>Here should be home page</div>
@@ -39,4 +41,12 @@ function Home({history, location, match}) {
   )
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+      authenticated: state.authenticated
+    }
+}
+
+const WrappedHome = connect(mapStateToProps)(Home)
+
+export default WrappedHome;
