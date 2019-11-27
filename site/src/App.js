@@ -9,12 +9,14 @@ import WrappedHome from "./Components/Home"
 import { connect } from "react-redux"
 
 function App(props) {
-  const dispatch = props.dispatch
+  //const dispatch = props.dispatch
 
   //Switch block is used to ensure that only one route is displayde at a time
   return(
     <div className="App">
       <BrowserRouter>
+        {
+          props.authenticated ?
         <Switch>
           <Route path='/' exact component={WrappedHome} />
           <Route path='/home' exact component={WrappedHome} />
@@ -24,6 +26,9 @@ function App(props) {
           <Route path='/requests' component={Requests} />
           <Route path='/' component={UnknownPath} />
         </Switch>
+        :
+        <Route path='/' component={WrappedLoginScreen} />
+        }
       </BrowserRouter>
     </div>
   )
@@ -31,7 +36,7 @@ function App(props) {
 
 const mapStateToProps = (state) => {
   return {
-    authenticated: state.authenticated
+    authenticated: state.common.authenticated
   }
 }
 

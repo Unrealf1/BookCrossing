@@ -1,27 +1,41 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import { actions } from "../Actions"
+import { actionAuthenticate } from "../Store/Common/Actions"
 import { connect } from "react-redux"
+import WrappedLoginForm from "./LoginScreen/LoginForm";
+import WrappedRegistrationForm from "./LoginScreen/RegistrationForm";
 
-function LoginScreen(props) {
+function TrueLoginScreen(props) {
   const dispatch = props.dispatch
   return(
     <div>
-        <div> Here should be login screen</div>
-        <Link to='/'> go to homepage</Link>
-        <button onClick={() => {dispatch(actions.actionAuthenticate)}}> Authenticate </button>
-        {props.authenticated
-                  ? <p>Already logged in!</p>
-                  : <p>Please log in</p>
-              }
-
+        <div>
+          <WrappedLoginForm/>
+          <WrappedRegistrationForm/>
+        </div>
+        <button onClick={() => {dispatch(actionAuthenticate)}}> Authenticate </button>
     </div>
   )
 };
 
+function LoginScreen(props) {
+  if (props.authenticated) {
+    return (
+      <div>
+        <p>Already logged in</p>
+        <Link to='/'> go to homepage</Link>
+      </div>
+    )
+  } else {
+    return (
+      <TrueLoginScreen/>
+    )
+  }
+}
+
 const mapStateToProps = (state) => {
   return {
-    authenticated: state.authenticated
+    authenticated: state.common.authenticated
   }
 }
 
