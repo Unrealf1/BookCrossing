@@ -2,10 +2,10 @@ import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import WrappedLoginScreen from "./Components/LoginScreen/LoginScreen"
 import UnknownPath from "./Components/UnknownPath/UnknownPath"
-import Library from "./Components/Library/Library"
+import { WrappedLibrary } from "./Components/Library/Library"
 import Preferences from "./Components/Preferences/Preferences"
 import Requests from "./Components/Requests/Requests"
-import WrappedHome from "./Home/Home"
+import WrappedHome from "./Components/Home/Home"
 import { connect } from "react-redux"
 import WrappedTop from "./Components/Top/Top"
 
@@ -24,10 +24,10 @@ function App(props) {
           <Switch>
             <Route path='/' exact component={WrappedHome} />
             <Route path='/home' exact component={WrappedHome} />
-            <Route path='/login' component={WrappedLoginScreen} />
-            <Route path='/library' component={Library} />
-            <Route path='/pref' component={Preferences} />
-            <Route path='/requests' component={Requests} />
+            <Route path='/login' exact component={WrappedLoginScreen} />
+            <Route path='/library' exact component={WrappedLibrary} />
+            <Route path='/pref' exact component={Preferences} />
+            <Route path='/requests' exact component={Requests} />
             <Route path='/' component={UnknownPath} />
           </Switch>
         </div>

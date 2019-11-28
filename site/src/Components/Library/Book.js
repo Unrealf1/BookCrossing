@@ -1,10 +1,13 @@
 import React from "react"
 
 
-export default function Book({name="NoName"}) {
+export default function Book(props) {
+  const name = props.name
+  const author = props.author
+
   return(
-    <span>
-        I am a book! called {name}
-    </span>
+    <li>
+        Name: {name}  Author: {author}
+    </li>
   )
 };

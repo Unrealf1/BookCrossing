@@ -25,11 +25,11 @@ function LoginForm(props) {
             </div>
             <div>
                 <button type="button" onClick={(event)=>{
-                  console.log(event)
                   const login = document.getElementById("singin_login_textbox").value;
                   const password = document.getElementById("singin_password_textbox").value;
-                  console.log(login)
-                  console.log(password)
+                  console.log("Sing in with this detailes:")
+                  console.log(`login: ${login}`)
+                  console.log(`password: ${password}`)
 
                   dispatch(actionAuthenticate)
                   history.push("/home")

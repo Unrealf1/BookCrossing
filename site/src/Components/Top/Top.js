@@ -5,8 +5,6 @@ import "./Top.css"
 
 
 function Top(props) {
-    const history = props.history
-    console.log(history)
     return (
         <div className="topSign">
             <span className="topLink">
