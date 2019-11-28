@@ -1,12 +1,14 @@
 import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import WrappedLoginScreen from "./Components/LoginScreen"
-import UnknownPath from "./Components/UnknownPath"
-import Library from "./Components/Library"
-import Preferences from "./Components/Preferences"
-import Requests from "./Components/Requests"
-import WrappedHome from "./Components/Home"
+import WrappedLoginScreen from "./Components/LoginScreen/LoginScreen"
+import UnknownPath from "./Components/UnknownPath/UnknownPath"
+import Library from "./Components/Library/Library"
+import Preferences from "./Components/Preferences/Preferences"
+import Requests from "./Components/Requests/Requests"
+import WrappedHome from "./Home/Home"
 import { connect } from "react-redux"
+import WrappedTop from "./Components/Top/Top"
+
 
 function App(props) {
   //const dispatch = props.dispatch
@@ -17,15 +19,18 @@ function App(props) {
       <BrowserRouter>
         {
           props.authenticated ?
-        <Switch>
-          <Route path='/' exact component={WrappedHome} />
-          <Route path='/home' exact component={WrappedHome} />
-          <Route path='/login' component={WrappedLoginScreen} />
-          <Route path='/library' component={Library} />
-          <Route path='/pref' component={Preferences} />
-          <Route path='/requests' component={Requests} />
-          <Route path='/' component={UnknownPath} />
-        </Switch>
+        <div>
+          <WrappedTop/>
+          <Switch>
+            <Route path='/' exact component={WrappedHome} />
+            <Route path='/home' exact component={WrappedHome} />
+            <Route path='/login' component={WrappedLoginScreen} />
+            <Route path='/library' component={Library} />
+            <Route path='/pref' component={Preferences} />
+            <Route path='/requests' component={Requests} />
+            <Route path='/' component={UnknownPath} />
+          </Switch>
+        </div>
         :
         <Route path='/' component={WrappedLoginScreen} />
         }

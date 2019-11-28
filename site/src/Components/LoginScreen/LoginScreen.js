@@ -1,19 +1,16 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import { actionAuthenticate } from "../Store/Common/Actions"
 import { connect } from "react-redux"
-import WrappedLoginForm from "./LoginScreen/LoginForm";
-import WrappedRegistrationForm from "./LoginScreen/RegistrationForm";
+import WrappedLoginForm from "./LoginForm";
+import WrappedRegistrationForm from "./RegistrationForm";
 
 function TrueLoginScreen(props) {
-  const dispatch = props.dispatch
   return(
     <div>
         <div>
           <WrappedLoginForm/>
           <WrappedRegistrationForm/>
         </div>
-        <button onClick={() => {dispatch(actionAuthenticate)}}> Authenticate </button>
     </div>
   )
 };

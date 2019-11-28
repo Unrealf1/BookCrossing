@@ -9,11 +9,6 @@ function Home(props) {
     <div>
         <div>Here should be home page</div>
         <div>
-            <span>
-            <Link to='/login'> 
-                To login screen
-            </Link>
-            </span>
             <span> or you can press this lovely button:</span>
             <button 
                 onClick={()=> {
@@ -21,21 +16,6 @@ function Home(props) {
                     history.push('/login')
                 }}
             >Press me ;)</button>
-        </div>
-        <div>
-            <Link to='/library'> 
-                To library managment
-            </Link>
-        </div>
-        <div>
-            <Link to='/pref'> 
-                To the settings!
-            </Link>
-        </div>
-        <div>
-            <Link to='/requests'> 
-                Missile incoming!
-            </Link>
         </div>
     </div>
   )

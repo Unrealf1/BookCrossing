@@ -5,8 +5,6 @@ import { withRouter } from 'react-router-dom';
 
 
 function LoginForm(props) {
-  console.log(`props are`)
-  console.log(props)
   const history = props.history;
   const dispatch = props.dispatch
   return(

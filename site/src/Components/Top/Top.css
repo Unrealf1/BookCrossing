@@ -1,0 +1,16 @@
+.topLink {
+    background-color: rgb(252, 255, 91);
+    margin-right: 0.3rem;
+    border-style: solid;
+    border-radius: 1rem;
+    border-width: 0.3rem;
+    font-size: 2.5rem;
+}
+
+.topSign {
+    margin-bottom: 2rem;
+    margin-top: 0.6rem;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}

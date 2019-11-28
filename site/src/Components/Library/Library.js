@@ -1,7 +1,7 @@
 import React from "react"
-import Book from "./Library/Book"
-import AddBook from "./Library/AddBook"
-import HomeButton from "./Common/HomeButton"
+import Book from "./Book"
+import AddBook from "./AddBook"
+import HomeButton from "../Common/HomeButton"
 
 
 export default function Library() {

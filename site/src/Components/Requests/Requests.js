@@ -1,5 +1,5 @@
 import React from "react"
-import HomeButton from "./Common/HomeButton"
+import HomeButton from "../Common/HomeButton"
 
 
 export default function Preferences() {

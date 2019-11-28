@@ -35,7 +35,7 @@ function RegistrationForm(props) {
                         console.log(`Got user with login ${login} and password ${password}`)
                     }
 
-                }}>Sing in</button>
+                }}>Sing up</button>
             </div>
         </form>
     </div>
