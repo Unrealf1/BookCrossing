@@ -8,12 +8,18 @@ const defaultState = {
 export const reducerLibrary = (state=defaultState, action) => {
     switch (action.type) {
         case ADD_BOOK:
-            //state.books.push()
             return {...state, 
                 books: [...state.books, {
                     name: action.payload.name,
-                    author: action.payload.author
+                    author: action.payload.author,
+                    id: action.payload.id
             }]}
+        case REMOVE_BOOK:
+            return {...state,
+                books: state.books.filter(
+                    book => book.id !== action.payload.id
+                )                
+            }
         case TOGGLE_MODAL:
             return {
                 ...state, modalVisible: !state.modalVisible

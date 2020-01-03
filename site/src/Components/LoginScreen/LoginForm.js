@@ -8,7 +8,7 @@ function LoginForm(props) {
   const history = props.history;
   const dispatch = props.dispatch
   return(
-    <div>
+    <span className="login-screen-form">
         <h3>Sing in</h3>
         <form>
             <div>
@@ -24,7 +24,7 @@ function LoginForm(props) {
                 <input type="password" name="password" placeholder="Password" id="singin_password_textbox"></input>
             </div>
             <div>
-                <button type="button" onClick={(event)=>{
+                <button className="login-screen-button" type="button" onClick={(event)=>{
                   const login = document.getElementById("singin_login_textbox").value;
                   const password = document.getElementById("singin_password_textbox").value;
                   console.log("Sing in with this detailes:")
@@ -37,7 +37,7 @@ function LoginForm(props) {
                   }}>Sing in</button>
             </div>
         </form>
-    </div>
+    </span>
   )
 };
 

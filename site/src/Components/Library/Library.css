@@ -1,0 +1,14 @@
+.Library {
+    margin-left: 5%;
+}
+
+.LibList {
+}
+
+.book-remove-button {
+    background: #23f8ff;
+    border-radius: 30%;
+    color: black;
+    border-width: 0.1rem;
+    border-color: black;      
+}

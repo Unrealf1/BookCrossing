@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 import WrappedLoginForm from "./LoginForm";
 import WrappedRegistrationForm from "./RegistrationForm";
+import "./LoginScreen.css"
 
 function TrueLoginScreen(props) {
   return(
     <div>
-        <div>
+        <div className="login-screen-container">
           <WrappedLoginForm/>
           <WrappedRegistrationForm/>
         </div>

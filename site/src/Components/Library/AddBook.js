@@ -3,12 +3,11 @@ import { connect } from "react-redux"
 import { actionToggleModal, actionAddBook } from "../../Store/Library/Actions"
 
 
-function Modal(props) {
+function Form(props) {
   const dispatch = props.dispatch
   return (
-    <div className="addBookModal">
+    <div className="addBookForm">
       <form>
-        <h3>Name</h3>
         <input type="text"
                 name="name"
                 autoComplete="off" 
@@ -42,7 +41,7 @@ function AddBook(props) {
   const modalVisible = props.modalVisible
   return(
     <div>
-      {modalVisible? <Modal dispatch={dispatch} /> :
+      {modalVisible? <Form dispatch={dispatch} /> :
         <button onClick={()=> {dispatch(actionToggleModal)}}>
             Add book
         </button>

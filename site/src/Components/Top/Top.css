@@ -3,6 +3,9 @@
     margin-top: 0.6rem;
     display: flex;
     justify-content: center;
+    background-color: aqua;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
 .topLink {

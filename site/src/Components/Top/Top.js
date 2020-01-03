@@ -27,11 +27,6 @@ function Top(props) {
                     To the settings!
                 </Link>
             </span>
-            <span className="topLink">
-                <Link to='/requests'> 
-                    Missile incoming!
-                </Link>
-            </span>
             
         </div>
     )

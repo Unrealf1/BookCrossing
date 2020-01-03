@@ -27,7 +27,6 @@ function App(props) {
             <Route path='/login' exact component={WrappedLoginScreen} />
             <Route path='/library' exact component={WrappedLibrary} />
             <Route path='/pref' exact component={Preferences} />
-            <Route path='/requests' exact component={Requests} />
             <Route path='/' component={UnknownPath} />
           </Switch>
         </div>

@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 function RegistrationForm(props) {
   //const history = props.history;
   return(
-    <div>
+    <span className="login-screen-form">
         <h3>Sing up</h3>
         <form>
             <div>
@@ -24,7 +24,7 @@ function RegistrationForm(props) {
                 <input type="password" name="password" placeholder="Repeat password" id="singup_password_repeat_textbox"></input>
             </div>
             <div>
-                <button type="button" onClick={(event)=>{
+                <button className="login-screen-button" type="button" onClick={(event)=>{
                     const login = document.getElementById("singup_login_textbox").value;
                     const password = document.getElementById("singup_password_textbox").value;
                     const password2 = document.getElementById("singup_password_repeat_textbox").value;
@@ -38,7 +38,7 @@ function RegistrationForm(props) {
                 }}>Sing up</button>
             </div>
         </form>
-    </div>
+    </span>
   )
 };
 
