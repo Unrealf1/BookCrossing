@@ -5,26 +5,29 @@ import "./Top.css"
 
 
 function Top(props) {
+    const nightmode = props.nightmode
+    const signClass = nightmode ? "topSign topSignNight" : "topSign"
+    const linkClass = nightmode ? "topLink topLinkNight" : "topLink"
     return (
-        <div className="topSign">
-            <span className="topLink">
+        <div className={signClass}>
+            <span className={linkClass}>
                 <Link to='/login'> 
-                    To login screen
+                    Login
                 </Link>
             </span>
-            <span className="topLink">
+            <span className={linkClass}>
                 <Link to='/home'> 
-                    To home
+                    Home
                 </Link>
             </span>
-            <span className="topLink">
+            <span className={linkClass}>
                 <Link to='/library'> 
-                    To library
+                    Library
                 </Link>
             </span>
-            <span className="topLink">
+            <span className={linkClass}>
                 <Link to='/pref'> 
-                    To the settings!
+                    Settings
                 </Link>
             </span>
             
@@ -34,7 +37,7 @@ function Top(props) {
 
 const mapStateToProps = (state) => {
   return {
-    
+    nightmode: state.preferences.nightmode
   }
 }
 

@@ -11,9 +11,10 @@ function Preferences(props) {
   return(
     <div className="common-page-container">
         Here you can change some settings
-        <HomeButton/>
         <div>
-          Nightmode: <input type="checkbox" onClick={()=>{dispatch(actionToggleNightMode)}}/>
+          Nightmode: <input type="checkbox" className="nightmode-button"
+                      onClick={()=>{dispatch(actionToggleNightMode)}}
+                      checked={props.nightmode}/>
         </div>
     </div>
   )

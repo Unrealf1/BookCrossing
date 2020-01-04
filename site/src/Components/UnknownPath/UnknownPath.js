@@ -3,6 +3,6 @@ import React from "react"
 
 export default function UnknownPath() {
   return(
-    <div> Hey, you! What are you doing here?</div>
+    <div className="common-page-container"> Stop right there, criminal scum! </div>
   )
 };
