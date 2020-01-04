@@ -3,11 +3,12 @@ import Book from "./Book"
 import AddBook from "./AddBook"
 import { connect } from "react-redux"
 import "./Library.css"
+import "../Common/Common.css"
 
 
 function LibraryList(props) {
   return (
-    <ol className="LibList">
+    <ol>
         { props.books.map((book, index) =>
                 <Book name={book.name} key={book.id} author={book.author} 
                       book_id={book.id} index={index + 1}/>) 
@@ -18,7 +19,7 @@ function LibraryList(props) {
 
 function Library(props) {
   return(
-    <div className="Library">
+    <div className={"common-page-container Library"}>
         <AddBook/>
         {props.books.length > 0 ? <LibraryList books={props.books}/> : <p>You didn't add any books yet :(</p>}
     </div>

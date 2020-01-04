@@ -14,6 +14,7 @@ function App(props) {
   //const dispatch = props.dispatch
 
   //Switch block is used to ensure that only one route is displayde at a time
+
   return(
     <div className="App">
       <BrowserRouter>
@@ -40,7 +41,8 @@ function App(props) {
 
 const mapStateToProps = (state) => {
   return {
-    authenticated: state.common.authenticated
+    authenticated: state.common.authenticated,
+    nightmode: state.preferences.nightmode
   }
 }
 
