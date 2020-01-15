@@ -6,8 +6,9 @@ import { actionToggleModal, actionAddBook } from "../../Store/Library/Actions"
 function Form(props) {
   const dispatch = props.dispatch
   return (
-    <div className="addBookForm">
+    <span className="addBookForm">
       <form>
+        <div>
         <input type="text"
                 name="name"
                 autoComplete="off" 
@@ -15,6 +16,8 @@ function Form(props) {
                 spellCheck="true"
                 id="addbook_name_textbox">
         </input>
+        </div>
+        <div>
         <input type="text"
                 name="author"
                 autoComplete="on" 
@@ -22,6 +25,7 @@ function Form(props) {
                 spellCheck="false"
                 id="addbook_author_textbox">
         </input>
+        </div>
         <button type="button" onClick={()=>{
           const name=document.getElementById("addbook_name_textbox").value;
           const author=document.getElementById("addbook_author_textbox").value;
@@ -32,7 +36,7 @@ function Form(props) {
         }}>Submit</button>
         <button type="button" onClick={()=>dispatch(actionToggleModal)}>Cancel</button>
       </form>
-    </div>
+    </span>
   )
 }
 
@@ -40,13 +44,13 @@ function AddBook(props) {
   const dispatch = props.dispatch
   const modalVisible = props.modalVisible
   return(
-    <div>
+    <span>
       {modalVisible? <Form dispatch={dispatch} /> :
         <button onClick={()=> {dispatch(actionToggleModal)}}>
             Add book
         </button>
       }
-    </div>
+    </span>
   )
 };
 

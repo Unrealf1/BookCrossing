@@ -9,7 +9,6 @@ function Home(props) {
   const history = props.history;
   return(
     <div className="common-page-container">
-        <div>Here should be home page</div>
         <Search></Search>
         <Notifications></Notifications>
     </div>

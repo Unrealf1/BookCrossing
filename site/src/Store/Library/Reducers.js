@@ -1,8 +1,9 @@
-import { ADD_BOOK, REMOVE_BOOK, TOGGLE_MODAL } from "./Actions"
+import { ADD_BOOK, REMOVE_BOOK, TOGGLE_MODAL, LOADED } from "./Actions"
 
 const defaultState = {
     books: [],
-    modalVisible: false
+    modalVisible: false,
+    loading: true
 };
 
 export const reducerLibrary = (state=defaultState, action) => {
@@ -23,6 +24,10 @@ export const reducerLibrary = (state=defaultState, action) => {
         case TOGGLE_MODAL:
             return {
                 ...state, modalVisible: !state.modalVisible
+            }
+        case LOADED:
+            return {
+                ...state, loading: false
             }
         default:
             break;

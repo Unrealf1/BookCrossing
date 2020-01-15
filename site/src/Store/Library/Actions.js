@@ -1,4 +1,7 @@
 export const ADD_BOOK = 'ADD_BOOK'
+export const REMOVE_BOOK = 'REMOVE_BOOK'
+export const TOGGLE_MODAL = 'TOGGLE_MODAL'
+export const LOADED = 'LOADED'
 
 var nextId = 1;
 
@@ -14,8 +17,6 @@ export function actionAddBook(name='Book Name', author='Book Author') {
     }
 }
 
-export const REMOVE_BOOK = 'REMOVE_BOOK'
-
 export function actionRemoveBook(id) {
     return {
         type: REMOVE_BOOK,
@@ -25,8 +26,10 @@ export function actionRemoveBook(id) {
     }
 }
 
-export const TOGGLE_MODAL = 'TOGGLE_MODAL'
-
 export const actionToggleModal = {
     type: TOGGLE_MODAL
+}
+
+export const actionLoaded = {
+    type: LOADED
 }
