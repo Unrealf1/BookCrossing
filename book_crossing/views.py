@@ -12,6 +12,7 @@ class BookViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save()
 
+
 class AuthorViewSet(viewsets.ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
@@ -63,6 +64,30 @@ class BorrowRequestViewSet(viewsets.ModelViewSet):
 class ExchangeRequestViewSet(viewsets.ModelViewSet):
     queryset = ExchangeRequest.objects.all()
     serializer_class = ExchangeRequestSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
+
+
+class RequestBookFrontViewSet(viewsets.ModelViewSet):
+    queryset = RequestBookFront.objects.all()
+    serializer_class = RequestBookFrontSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
+
+
+class RequestAddBookViewSet(viewsets.ModelViewSet):
+    queryset = RequestAddBook.objects.all()
+    serializer_class = RequestAddBookSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
+
+
+class AnswerViewSet(viewsets.ModelViewSet):
+    queryset = Answers.objects.all()
+    serializer_class = AnswerSerializer
 
     def perform_create(self, serializer):
         serializer.save()

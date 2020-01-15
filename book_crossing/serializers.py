@@ -48,3 +48,21 @@ class ExchangeRequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExchangeRequest
         fields = ('book_id', 'exchange_book_id', 'requester_id', 'requestee_id', 'status', 'date', 'user_text')
+
+
+class RequestBookFrontSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RequestBookFront
+        fields = ('user_id', 'req_id')
+
+
+class RequestAddBookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RequestAddBook
+        fields = ('username', 'name', 'author')
+
+
+class AnswerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Answers
+        fields = ('requested_id', 'name', 'author')

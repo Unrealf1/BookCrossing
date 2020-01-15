@@ -75,3 +75,20 @@ class ExchangeRequest(models.Model):
     status = models.IntegerField('статус запроса')
     date = models.DateTimeField('дата и время запроса')
     user_text = models.CharField('текст пользователя при запросе', max_length=200)
+
+
+class RequestBookFront(models.Model):
+    user_id = models.IntegerField('id пользователя')
+    req_id = models.IntegerField('id запроса', primary_key=True)
+
+
+class RequestAddBook(models.Model):
+    username = models.CharField('имя пользователя', max_length=200)
+    name = models.CharField('имя книги', max_length=200)
+    author = models.CharField('автор', max_length=200)
+
+
+class Answers(models.Model):
+    requested_id = models.ForeignKey(RequestBookFront, on_delete=models.CASCADE, related_name='request_id')
+    name = models.CharField("книга", max_length=200)
+    author = models.CharField("автор", max_length=200)
