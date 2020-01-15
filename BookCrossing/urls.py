@@ -32,6 +32,8 @@ router6 = routers.DefaultRouter()
 router6.register('borrow_req', BorrowRequestViewSet)
 router7 = routers.DefaultRouter()
 router7.register('exchange_req', ExchangeRequestViewSet)
+router8 = routers.DefaultRouter()
+router8.register('book', BookViewSet)
 
 urlpatterns = [
     path('api/', include(router1.urls)),
@@ -41,5 +43,6 @@ urlpatterns = [
     path('api/', include(router5.urls)),
     path('api/', include(router6.urls)),
     path('api/', include(router7.urls)),
+    path('api/', include(router8.urls)),
     path('admin/', admin.site.urls),
 ]
