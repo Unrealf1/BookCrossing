@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 import WrappedLoginForm from "./LoginForm";
 import WrappedRegistrationForm from "./RegistrationForm";
 import "./LoginScreen.css"
+import "../Common/Common.css"
+import UserList from "./UserList"
 
 function TrueLoginScreen(props) {
   return(
@@ -19,9 +21,10 @@ function TrueLoginScreen(props) {
 function LoginScreen(props) {
   if (props.authenticated) {
     return (
-      <div>
+      <div className="common-page-container">
         <p>Already logged in</p>
         <Link to='/'> go to homepage</Link>
+        <UserList/>
       </div>
     )
   } else {

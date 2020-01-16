@@ -8,6 +8,22 @@
     text-rendering: optimizeLegibility;
 }
 
+.number-column {
+  width: 2rem;
+}
+
+.author-column {
+  min-width: 7rem;
+}
+
+.title-column{
+  min-width: 7rem;
+}
+
+.button-column{
+  width: 1.5rem;
+}
+
 .table-fill {
   min-width: 600px;
   background: white;
