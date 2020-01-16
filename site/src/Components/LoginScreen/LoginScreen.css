@@ -1,0 +1,14 @@
+.login-screen-container {
+    display: flex;
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+.login-screen-form {
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.login-screen-button {
+    margin-top: 0.3rem;
+}
